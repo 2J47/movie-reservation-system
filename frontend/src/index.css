@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-marquee-bg text-ink-light;
+  }
+}
+
+@layer components {
+  /* 시네마 티켓 스텁 느낌의 카드 (시그니처 요소) */
+  .ticket-card {
+    @apply relative bg-marquee-card rounded-2xl shadow-2xl shadow-black/40;
+  }
+
+  /* 티켓 좌우 절취선 노치 */
+  .ticket-notch-left,
+  .ticket-notch-right {
+    @apply absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-marquee-bg rounded-full;
+  }
+  .ticket-notch-left {
+    @apply -left-3;
+  }
+  .ticket-notch-right {
+    @apply -right-3;
+  }
+
+  .ticket-divider {
+    @apply border-t border-dashed border-marquee-line;
+  }
+
+  .form-input {
+    @apply w-full bg-marquee-bg border border-marquee-line rounded-lg px-4 py-3
+      text-ink-light placeholder:text-ink-muted font-body text-sm
+      focus:outline-none focus:border-reel-gold focus:ring-1 focus:ring-reel-gold
+      transition-colors;
+  }
+
+  .btn-primary {
+    @apply w-full bg-reel-gold hover:bg-reel-goldDark text-marquee-bg font-body font-semibold
+      rounded-lg py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+}

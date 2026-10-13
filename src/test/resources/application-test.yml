@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL #H2 인메모리 DB 사용
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+#dummy 시크릿 키
+portone:
+  api-secret: "test_portone_dummy_secret_key"
+
+jwt:
+  secret: "test_jwt_dummy_secret_key_make_it_long_enough_for_hs256"
+
+external:
+  api:
+    kofic:
+      key: "test_kofic_dummy_secret_key"
+      base-url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+    tmdb:
+      key: "test_tmdb_dummy_secret_key"
+      base-url: "https://api.themoviedb.org/3"
+      image-prefix: "https://image.tmdb.org/t/p/w500"

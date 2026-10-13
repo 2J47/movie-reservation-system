@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update # 자바 코드로 짠 테이블 설계를 DB에 자동으로 업데이트 해줍니다.
+    show-sql: true     # 실행되는 쿼리를 콘솔에 보여줍니다.
+    properties:
+      hibernate:
+        format_sql: true # 쿼리를 보기 좋게 줄바꿈해서 보여줍니다.
+
+jwt:
+  secret: ${JWT_SECRET_KEY}
+
+portone:
+  api-secret: ${PORTONE_API_SECRET}
+
+external:
+  api:
+    kofic:
+      key: ${KOFIC_API_SECRET}
+      base-url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+    tmdb:
+      key: ${TMDB_API_SECRET}
+      base-url: "https://api.themoviedb.org/3"
+      image-prefix: "https://image.tmdb.org/t/p/w500"
+
+server:
+  tomcat:
+    threads:
+      max: 400       # 최대 스레드 수 늘리기 (기본 200)
+    accept-count: 300 # 꽉 찼을 때 대기할 수 있는 큐 사이즈 늘리기 (기본 100)
