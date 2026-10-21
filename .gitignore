@@ -2,6 +2,8 @@ HELP.md
 .env
 .env.*
 !.env.example
+DummyDataInit.java
+tokens.json
 
 *.log
 logs/
