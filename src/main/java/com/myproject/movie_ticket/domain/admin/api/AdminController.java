@@ -32,8 +32,6 @@ public class AdminController {
     //쿠폰 발행
     @PostMapping("/coupons")
     public ResponseEntity<Void> createCoupon(@RequestBody CouponCreateRequestDto requestDto) {
-        System.out.println("프론트에서 넘어온 이름: " + requestDto.getName());
-        System.out.println("프론트에서 온 값: " + requestDto.getDiscountType());
         adminCouponService.createCoupon(requestDto);
         return ResponseEntity.ok().build();
     }

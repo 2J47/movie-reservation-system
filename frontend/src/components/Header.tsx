@@ -21,7 +21,7 @@ const Header = () => {
           to="/"
           className="font-display text-2xl tracking-marquee text-reel-gold select-none"
         >
-          CINEMOA
+          CINEMA
         </Link>
 
         {/* 네비게이션 */}
