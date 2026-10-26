@@ -1,6 +1,7 @@
 package com.myproject.movie_ticket.domain.reservation.api;
 
 import com.myproject.movie_ticket.domain.reservation.ReservationStatus;
+import com.myproject.movie_ticket.domain.reservation.dto.MyReservationResponseDto;
 import com.myproject.movie_ticket.domain.reservation.dto.ReservationCreateRequestDto;
 import com.myproject.movie_ticket.domain.reservation.dto.ReservationResponseDto;
 import com.myproject.movie_ticket.domain.reservation.dto.TicketResponseDto;
@@ -50,7 +51,15 @@ public class ReservationController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/me/tickets/upcoming")
+
+    @GetMapping("/me")
+    public ResponseEntity<List<MyReservationResponseDto>> getMyReservations(
+            @AuthenticationPrincipal Long userId) {
+        List<MyReservationResponseDto> reservations = reservationService.getMyReservations(userId);
+        return ResponseEntity.ok(reservations);
+    }
+
+    @GetMapping("/me/upcoming")
     public ResponseEntity<List<TicketResponseDto>> getUpcomingTickets(@AuthenticationPrincipal Long userId) {
        return ResponseEntity.ok(reservationService.getUpcomingTickets(userId));
     }

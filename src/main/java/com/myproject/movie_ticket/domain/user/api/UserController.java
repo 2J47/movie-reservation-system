@@ -20,7 +20,6 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-    private final ReservationService reservationService;
 
     @GetMapping
     public ResponseEntity<UserProfileResponseDto> getUserProfile(
@@ -48,12 +47,5 @@ public class UserController {
                                                @RequestBody PasswordUpdateRequestDto requestDto) {
         userService.updatePassword(userId, requestDto);
         return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/reservations")
-    public ResponseEntity<List<MyReservationResponseDto>> getMyReservations(
-            @AuthenticationPrincipal Long userId) {
-        List<MyReservationResponseDto> reservations = reservationService.getMyReservations(userId);
-        return ResponseEntity.ok(reservations);
     }
 }
