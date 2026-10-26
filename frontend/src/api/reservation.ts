@@ -29,10 +29,10 @@ export const cancelReservation = async (reservationNo: string): Promise<void> =>
 
 /**
  * 내 예매 내역 목록 조회
- * GET /api/v1/users/me/reservations
+ * GET /api/v1/reservations/me
  * 로그인 필요
  */
 export const getMyReservations = async (): Promise<ReservationHistoryItem[]> => {
-  const { data } = await api.get<ReservationHistoryItem[]>('/api/v1/users/me/reservations')
+  const { data } = await api.get<ReservationHistoryItem[]>('/api/v1/reservations/me')
   return data
 }
