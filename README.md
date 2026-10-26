@@ -68,38 +68,38 @@
 <details>
 <summary><b>🔍 전체 API 명세표</b></summary>
 
-| 도메인 | HTTP Method | API URI | 설명 |
-| :--- | :---: | :--- | :--- |
-| **Auth** | `POST` | `/api/v1/auth/signup` | 회원가입 |
-| | `POST` | `/api/v1/auth/login` | 로그인 |
-| | `POST` | `/api/v1/auth/logout` | 로그아웃 |
-| | `POST` | `/api/v1/auth/reissue` | JWT 토큰 재발급 |
-| **User** | `GET` | `/api/v1/users/me` | 내 프로필 조회 |
-| | `PUT` | `/api/v1/users/me` | 프로필 정보 수정 |
-| | `PUT` | `/api/v1/users/me/password` | 비밀번호 변경 |
-| | `DELETE` | `/api/v1/users/me` | 회원 탈퇴 |
-| | `GET` | `/api/v1/users/me/reservations` | 내 예매 내역 조회 |
-| **Asset** | `GET` | `/api/v1/users/me/assets` | 내 자산(지갑/쿠폰) 조회 |
-| | `POST` | `/api/v1/users/me/assets/wallet/charge` | 지갑 잔액 충전 |
-| | `POST` | `/api/v1/users/me/assets/coupons/{couponId}` | 쿠폰 발급 |
-| **Movie** | `GET` | `/api/v1/movies` | 전체 영화 목록 조회 |
-| | `GET` | `/api/v1/movies/now-playing` | 현재 상영작 목록 조회 |
-| | `GET` | `/api/v1/movies/{movieId}` | 영화 상세 정보 조회 |
-| **Schedule** | `GET` | `/api/v1/movies/{movieId}/schedules` | 특정 영화의 스케줄 조회 |
-| | `GET` | `/api/v1/schedules/{scheduleId}/seats` | 특정 스케줄의 잔여 좌석 조회 |
-| **Reservation**| `POST` | `/api/v1/reservations` | 선착순 좌석 예매 생성 |
-| | `GET` | `/api/v1/reservations/{reservationNo}` | 예매 단건 상세 조회 |
-| | `POST` | `/api/v1/reservations/{reservationNo}/cancel` | 예매 취소 |
-| | `GET` | `/api/v1/reservations/me/tickets/upcoming` | 다가오는 모바일 티켓 조회 |
-| **Payment** | `POST` | `/api/v1/payments/verify` | 결제 승인 및 검증 |
-| | `POST` | `/api/v1/payments/refund/{reservationId}` | 결제 환불 처리 |
-| **Theater** | `GET` | `/api/v1/theaters` | 상영관 목록 조회 |
-| **Coupon** | `GET` | `/api/v1/coupons` | 전체 쿠폰 목록 조회 |
-| **Admin** | `POST` | `/api/v1/admin/movies/sync` | 영화 데이터 동기화 (외부 API) |
-| | `POST` | `/api/v1/admin/schedules/auto-generate` | 스케줄 자동 생성 |
-| | `POST` | `/api/v1/admin/coupons` | 관리자 쿠폰 생성 |
+| 도메인 | HTTP Method | API URI                                           | 설명 |
+| :--- | :---: |:--------------------------------------------------| :--- |
+| **Auth** | `POST` | `/api/v1/auth/signup`                             | 회원가입 |
+| | `POST` | `/api/v1/auth/login`                              | 로그인 |
+| | `POST` | `/api/v1/auth/logout`                             | 로그아웃 |
+| | `POST` | `/api/v1/auth/reissue`                            | JWT 토큰 재발급 |
+| **User** | `GET` | `/api/v1/users/me`                                | 내 프로필 조회 |
+| | `PUT` | `/api/v1/users/me`                                | 프로필 정보 수정 |
+| | `PUT` | `/api/v1/users/me/password`                       | 비밀번호 변경 |
+| | `DELETE` | `/api/v1/users/me`                                | 회원 탈퇴 |
+| **Asset** | `GET` | `/api/v1/users/me/assets`                         | 내 자산(지갑/쿠폰) 조회 |
+| | `POST` | `/api/v1/users/me/assets/wallet/charge`           | 지갑 잔액 충전 |
+| | `POST` | `/api/v1/users/me/assets/coupons/{couponId}`      | 쿠폰 발급 |
+| **Movie** | `GET` | `/api/v1/movies`                                  | 전체 영화 목록 조회 |
+| | `GET` | `/api/v1/movies/now-playing`                      | 현재 상영작 목록 조회 |
+| | `GET` | `/api/v1/movies/{movieId}`                        | 영화 상세 정보 조회 |
+| **Schedule** | `GET` | `/api/v1/movies/{movieId}/schedules`              | 특정 영화의 스케줄 조회 |
+| | `GET` | `/api/v1/schedules/{scheduleId}/seats`            | 특정 스케줄의 잔여 좌석 조회 |
+| **Reservation**| `POST` | `/api/v1/reservations`                            | 선착순 좌석 예매 생성 |
+| | `GET` | `/api/v1/reservations/{reservationNo}`            | 예매 단건 상세 조회 |
+| | `POST` | `/api/v1/reservations/{reservationNo}/cancel`     | 예매 취소 |
+| | `GET` | `/api/v1/reservations/me`                          | 내 예매 내역 조회 |
+| | `GET` | `/api/v1/reservations/me/upcoming`                | 다가오는 모바일 티켓 조회 |
+| **Payment** | `POST` | `/api/v1/payments/verify`                         | 결제 승인 및 검증 |
+| | `POST` | `/api/v1/payments/refund/{reservationId}`         | 결제 환불 처리 |
+| **Theater** | `GET` | `/api/v1/theaters`                                | 상영관 목록 조회 |
+| **Coupon** | `GET` | `/api/v1/coupons`                                 | 전체 쿠폰 목록 조회 |
+| **Admin** | `POST` | `/api/v1/admin/movies/sync`                       | 영화 데이터 동기화 (외부 API) |
+| | `POST` | `/api/v1/admin/schedules/auto-generate`           | 스케줄 자동 생성 |
+| | `POST` | `/api/v1/admin/coupons`                           | 관리자 쿠폰 생성 |
 | | `POST` | `/api/v1/admin/users/{userId}/coupons/{couponId}` | 특정 유저에게 쿠폰 지급 |
-| | `GET` | `/api/v1/admin/theaters/options` | 관리자용 상영관 옵션 조회 |
-| | `GET` | `/api/v1/admin/movies/options` | 관리자용 영화 옵션 조회 |
+| | `GET` | `/api/v1/admin/theaters/options`                  | 관리자용 상영관 옵션 조회 |
+| | `GET` | `/api/v1/admin/movies/options`                    | 관리자용 영화 옵션 조회 |
 
 </details>
